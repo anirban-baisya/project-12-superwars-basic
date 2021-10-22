@@ -29,9 +29,9 @@ const initPlayers = (players) => {
     for (let i = 0; i< players.length; i++) {
         let character = {};
         character.name = players[i];
-        character.strength = 100;
-        character.image = `images/super-${i + 1}.png`;
-        character.type = "hero";
+        character.strength = getRandomStrength();
+        character.image = `images/super-${i+1}.png`;
+        character.type = i%2 === 1?"villain":"hero";
         detailedPlayers.push(character);
     }
     return detailedPlayers;
